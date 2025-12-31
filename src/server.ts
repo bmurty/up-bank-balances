@@ -19,7 +19,11 @@ HTMLcontent += "</head><body>";
 
 // Get a summary of all account balances
 
-const BankAccountsSummary = await UpBankAccountSummary(ApiUrl, EnvToken, CurrencySymbol);
+const BankAccountsSummary = await UpBankAccountSummary(
+  ApiUrl,
+  EnvToken,
+  CurrencySymbol,
+);
 
 HTMLcontent += "<h2>Account Summary</h2><ul>";
 
@@ -73,7 +77,7 @@ const app = new Application();
 app.use(async (context, next) => {
   try {
     await context.send({
-      root: ScriptDirectory + "/public",
+      root: PublicDirectory,
       index: "index.html",
     });
   } catch (error) {
