@@ -1,17 +1,13 @@
 {
   "fmt": {
-    "include": [
-      "src/"
-    ],
+    "include": ["src/"],
     "useTabs": false,
     "lineWidth": 120,
     "indentWidth": 2,
     "semiColons": true
   },
   "lint": {
-    "include": [
-      "src/"
-    ]
+    "include": ["src/"]
   },
   "imports": {
     "@oak/oak": "jsr:@oak/oak@^17.2.0",
@@ -20,7 +16,7 @@
     "@std/fs": "jsr:@std/fs@^1.0.21",
     "@std/path": "jsr:@std/path@^1.1.4"
   },
-  "nodeModulesDir": "auto",
+  "nodeModulesDir": "none",
   "tasks": {
     "cli": "deno run --allow-net --allow-read --allow-env src/cli.ts",
     "deno-upgrade": "deno upgrade stable || true",
