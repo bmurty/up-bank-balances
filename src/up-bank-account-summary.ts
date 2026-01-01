@@ -1,18 +1,16 @@
-export async function UpBankAccountSummary(
-  ApiUrl: string,
-  EnvToken: string,
-  CurrencySymbol: string,
-): Promise<string[]> {
+import * as App from "./constants.ts"
+
+export async function UpBankAccountSummary(): Promise<string[]> {
   // deno-lint-ignore prefer-const
   let FinalOutput: string[] = [];
 
   // Get a list of all open accounts
   const ApiResponse = await fetch(
-    ApiUrl + "/accounts",
+    App.ApiUrl + "/accounts",
     {
       method: "GET",
       headers: {
-        "Authorization": "Bearer " + EnvToken,
+        "Authorization": "Bearer " + App.ApiToken,
       },
     },
   );
@@ -29,7 +27,7 @@ export async function UpBankAccountSummary(
       "",
     ).trim();
 
-    FinalOutput.push(AccountDisplayName + ": " + CurrencySymbol + AccountInfo.balance.value);
+    FinalOutput.push(AccountDisplayName + ": " + App.CurrencySymbol + AccountInfo.balance.value);
   }
 
   return FinalOutput;

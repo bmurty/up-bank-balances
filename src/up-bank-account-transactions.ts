@@ -1,20 +1,16 @@
+import * as App from "./constants.ts"
 import moment from "moment";
 
-export async function UpBankAccountGetTransactions(
-  ApiUrl: string,
-  EnvToken: string,
-  CurrencySymbol: string,
-  BankAccountId: string,
-): Promise<string[]> {
+export async function UpBankAccountGetTransactions(BankAccountId: string): Promise<string[]> {
   // deno-lint-ignore prefer-const
   let TransactionList: string[] = [];
 
   const ApiResponse = await fetch(
-    ApiUrl + "/accounts/" + BankAccountId + "/transactions?page[size]=20",
+    App.ApiUrl + "/accounts/" + BankAccountId + "/transactions?page[size]=20",
     {
       method: "GET",
       headers: {
-        "Authorization": "Bearer " + EnvToken,
+        "Authorization": "Bearer " + App.ApiToken,
       },
     },
   );
@@ -27,12 +23,12 @@ export async function UpBankAccountGetTransactions(
     const TransactionDate = moment(TransactionInfo.createdAt).fromNow();
 
     // Fix the output of debit transactions
-    let TransactionAmount = (CurrencySymbol + TransactionInfo.amount.value).replace(
-      CurrencySymbol + "-",
-      "-" + CurrencySymbol,
+    let TransactionAmount = (App.CurrencySymbol + TransactionInfo.amount.value).replace(
+      App.CurrencySymbol + "-",
+      "-" + App.CurrencySymbol,
     );
 
-    if (TransactionAmount.indexOf("-" + CurrencySymbol) == -1) {
+    if (TransactionAmount.indexOf("-" + App.CurrencySymbol) == -1) {
       // This transaction is a credit
       TransactionAmount = "+" + TransactionAmount;
     }

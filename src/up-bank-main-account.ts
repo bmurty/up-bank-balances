@@ -1,11 +1,13 @@
-export async function UpBankGetMainAccount(ApiUrl: string, EnvToken: string): Promise<string> {
+import * as App from "./constants.ts"
+
+export async function UpBankGetMainAccount(): Promise<string> {
   // Get a list of all open accounts
   const ApiResponse = await fetch(
-    ApiUrl + "/accounts",
+    App.ApiUrl + "/accounts",
     {
       method: "GET",
       headers: {
-        "Authorization": "Bearer " + EnvToken,
+        "Authorization": "Bearer " + App.ApiToken,
       },
     },
   );
