@@ -1,8 +1,8 @@
 import { join } from "@std/path";
 import { Application } from "@oak/oak/application";
 
-import { AccountSummary, MainAccount } from "-/up-bank/accounts.ts";
-import { TransactionsForAccount } from "-/up-bank/transactions.ts";
+import { AccountSummary, MainAccount } from "-/up/accounts.ts";
+import { TransactionsForAccount } from "-/up/transactions.ts";
 
 // Initialise the HTML content for the page
 

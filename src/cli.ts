@@ -1,5 +1,5 @@
-import { AccountSummary, MainAccount } from "-/up-bank/accounts.ts";
-import { TransactionsForAccount } from "-/up-bank/transactions.ts";
+import { AccountSummary, MainAccount } from "-/up/accounts.ts";
+import { TransactionsForAccount } from "-/up/transactions.ts";
 
 // Get a summary of all account balances
 
