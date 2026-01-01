@@ -8,7 +8,7 @@ export async function UpBankAccountSummary(
 
   // Get a list of all open accounts
   const ApiResponse = await fetch(
-    ApiUrl + "/accounts?page[size]=30",
+    ApiUrl + "/accounts",
     {
       method: "GET",
       headers: {
