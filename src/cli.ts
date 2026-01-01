@@ -1,6 +1,6 @@
-import { UpBankAccountSummary } from "./up-bank-account-summary.ts";
-import { UpBankGetMainAccount } from "./up-bank-main-account.ts";
-import { UpBankAccountGetTransactions } from "./up-bank-account-transactions.ts";
+import { UpBankAccountSummary } from "-/up-bank-account-summary.ts";
+import { UpBankGetMainAccount } from "-/up-bank-main-account.ts";
+import { UpBankAccountGetTransactions } from "-/up-bank-account-transactions.ts";
 
 // Get a summary of all account balances
 

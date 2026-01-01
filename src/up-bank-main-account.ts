@@ -1,4 +1,4 @@
-import * as App from "./constants.ts"
+import * as App from "-/constants.ts"
 
 export async function UpBankGetMainAccount(): Promise<string> {
   // Get a list of all open accounts

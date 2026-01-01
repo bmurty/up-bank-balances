@@ -1,4 +1,4 @@
-import * as App from "./constants.ts"
+import * as App from "-/constants.ts"
 import moment from "moment";
 
 export async function UpBankAccountGetTransactions(BankAccountId: string): Promise<string[]> {
