@@ -14,13 +14,13 @@ A small script for [Up bank](https://up.com.au/) users that lists your accounts,
 
 ### Terminal
 
-```
+```bash
 deno task cli
 ```
 
-### Local webserver
+### Local web server
 
-```
+```bash
 deno task server
 ```
 
