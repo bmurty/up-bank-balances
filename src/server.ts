@@ -1,9 +1,9 @@
 import { join } from "@std/path";
 import { Application } from "@oak/oak/application";
 
-import { UpBankAccountSummary } from "-/up-bank/account-summary.ts";
-import { UpBankGetMainAccount } from "-/up-bank/account-main.ts";
-import { UpBankAccountGetTransactions } from "-/up-bank/transactions.ts";
+import { AccountSummary } from "-/up-bank/account-summary.ts";
+import { MainAccount } from "-/up-bank/account-main.ts";
+import { AccountTransactions } from "-/up-bank/transactions.ts";
 
 // Initialise the HTML content for the page
 
@@ -14,7 +14,7 @@ HTMLcontent += "</head><body>";
 
 // Get a summary of all account balances
 
-const BankAccountsSummary = await UpBankAccountSummary();
+const BankAccountsSummary = await AccountSummary();
 
 HTMLcontent += "<h2>Account Summary</h2><ul>";
 
@@ -26,8 +26,8 @@ HTMLcontent += "</ul>";
 
 // Get a list of the 10 most recent transactions on the main debit account
 
-const MainBankAccountId = await UpBankGetMainAccount();
-const MainBankAccountTransactions = await UpBankAccountGetTransactions(MainBankAccountId);
+const MainBankAccountId = await MainAccount();
+const MainBankAccountTransactions = await AccountTransactions(MainBankAccountId);
 
 HTMLcontent += "<h2>Recent Transactions</h2><ul>";
 

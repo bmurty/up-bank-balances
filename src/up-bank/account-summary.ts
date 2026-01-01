@@ -1,6 +1,6 @@
 import * as App from "-/constants.ts"
 
-export async function UpBankAccountSummary(): Promise<string[]> {
+export async function AccountSummary(): Promise<string[]> {
   // deno-lint-ignore prefer-const
   let FinalOutput: string[] = [];
 

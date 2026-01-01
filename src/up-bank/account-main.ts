@@ -1,6 +1,6 @@
 import * as App from "-/constants.ts"
 
-export async function UpBankGetMainAccount(): Promise<string> {
+export async function MainAccount(): Promise<string> {
   // Get a list of all open accounts
   const ApiResponse = await fetch(
     App.ApiUrl + "/accounts",
