@@ -1,9 +1,8 @@
 import { join } from "@std/path";
 import { Application } from "@oak/oak/application";
 
-import { AccountSummary } from "-/up-bank/account-summary.ts";
-import { MainAccount } from "-/up-bank/account-main.ts";
-import { AccountTransactions } from "-/up-bank/transactions.ts";
+import { AccountSummary, MainAccount } from "-/up-bank/accounts.ts";
+import { TransactionsForAccount } from "-/up-bank/transactions.ts";
 
 // Initialise the HTML content for the page
 
@@ -27,11 +26,11 @@ HTMLcontent += "</ul>";
 // Get a list of the 10 most recent transactions on the main debit account
 
 const MainBankAccountId = await MainAccount();
-const MainBankAccountTransactions = await AccountTransactions(MainBankAccountId);
+const MainBankTransactionsForAccount = await TransactionsForAccount(MainBankAccountId);
 
 HTMLcontent += "<h2>Recent Transactions</h2><ul>";
 
-for (const MainBankAccountTransaction of MainBankAccountTransactions) {
+for (const MainBankAccountTransaction of MainBankTransactionsForAccount) {
   HTMLcontent += "<li>" + MainBankAccountTransaction + "</li>";
 }
 

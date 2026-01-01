@@ -1,7 +1,7 @@
 import * as App from "-/constants.ts"
 import moment from "moment";
 
-export async function AccountTransactions(BankAccountId: string): Promise<string[]> {
+export async function TransactionsForAccount(BankAccountId: string): Promise<string[]> {
   // deno-lint-ignore prefer-const
   let TransactionList: string[] = [];
 

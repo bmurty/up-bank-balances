@@ -1,6 +1,5 @@
-import { AccountSummary } from "-/up-bank/account-summary.ts";
-import { MainAccount } from "-/up-bank/account-main.ts";
-import { AccountTransactions } from "-/up-bank/transactions.ts";
+import { AccountSummary, MainAccount } from "-/up-bank/accounts.ts";
+import { TransactionsForAccount } from "-/up-bank/transactions.ts";
 
 // Get a summary of all account balances
 
@@ -15,10 +14,10 @@ for (const BankAccountSummary of BankAccountsSummary) {
 // Get a list of the 10 most recent transactions on the main debit account
 
 const MainBankAccountId = await MainAccount();
-const MainBankAccountTransactions = await AccountTransactions(MainBankAccountId);
+const MainBankTransactionsForAccount = await TransactionsForAccount(MainBankAccountId);
 
 console.log("\nRecent Transactions:\n");
 
-for (const MainBankAccountTransaction of MainBankAccountTransactions) {
+for (const MainBankAccountTransaction of MainBankTransactionsForAccount) {
   console.log(MainBankAccountTransaction);
 }
