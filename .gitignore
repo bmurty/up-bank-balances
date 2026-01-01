@@ -7,3 +7,4 @@ vendor/
 public/
 
 *.log
+**/*.log
