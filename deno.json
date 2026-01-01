@@ -26,7 +26,7 @@
     },
     "version-check": {
       "description": "Check the installed Deno version is the same as the required version.",
-      "command": "./scripts/deno-version-check.sh"
+      "command": "bash ./.deno/version-check.sh"
     },
     "ver": {
       "description": "Shortcut for version-check",
