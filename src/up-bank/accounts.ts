@@ -1,4 +1,4 @@
-import * as App from "-/constants.ts"
+import * as App from "-/constants.ts";
 
 export async function AccountSummary(): Promise<string[]> {
   // deno-lint-ignore prefer-const
