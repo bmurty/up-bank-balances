@@ -21,7 +21,7 @@ deno task cli
 ### Local web server
 
 ```bash
-deno task server
+deno task web
 ```
 
 Then open [localhost:8001](http://localhost:8001/) in your web browser.

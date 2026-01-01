@@ -36,9 +36,9 @@
       "description": "Show your bank account balances in the terminal.",
       "command": "deno task ver && deno run --allow-net --allow-read --allow-env src/cli.ts"
     },
-    "server": {
+    "web": {
       "description": "Start a web server to display your bank account balances in a web browser.",
-      "command": "deno task ver && deno run --allow-net --allow-write=./ --allow-read --allow-env src/server.ts"
+      "command": "deno task ver && deno run --allow-net --allow-write=./ --allow-read --allow-env src/web.ts"
     },
     "deps": {
       "description": "Update the project's third-party dependencies.",
