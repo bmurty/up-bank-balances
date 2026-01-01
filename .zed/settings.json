@@ -1,0 +1,73 @@
+{
+  "lsp": {
+    "deno": {
+      "settings": {
+        "deno": {
+          "enable": true,
+          "lint": true,
+          "config": "./deno.json",
+          "importMap": "./deno.json",
+        },
+      },
+    },
+    "json-language-server": {
+      "settings": {
+        "json": {
+          "schemas": [
+            {
+              "fileMatch": ["deno.json", "deno.jsonc"],
+              "url": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+            },
+          ],
+        },
+      },
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "schemas": [
+            {
+              "fileMatch": [".github/*.yml", ".github/**/*.yml"],
+              "url": "https://www.schemastore.org/github-workflow",
+            },
+          ],
+        },
+      },
+    },
+  },
+  "languages": {
+    "JavaScript": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "Shell Script": {
+      "remove_trailing_whitespace_on_save": false,
+    },
+    "TypeScript": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "TSX": {
+      "language_servers": [
+        "deno",
+        "!typescript-language-server",
+        "!vtsls",
+        "!eslint",
+      ],
+      "formatter": "language_server",
+    },
+    "YAML": {
+      "formatter": "language_server",
+    },
+  },
+}
