@@ -1,0 +1,10 @@
+*.env
+!.up.sample.env
+
+node_modules/
+vendor/
+
+public/
+
+*.log
+**/*.log

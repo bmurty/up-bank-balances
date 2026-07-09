@@ -1,0 +1,46 @@
+{
+  "fmt": {
+    "include": [
+      "src/",
+      "deno.json"
+    ],
+    "useTabs": false,
+    "lineWidth": 120,
+    "indentWidth": 2,
+    "semiColons": true
+  },
+  "lint": {
+    "include": [
+      "src/",
+      "deno.json"
+    ]
+  },
+  "imports": {
+    "-/": "./src/",
+    "-/up/": "./src/up-bank/",
+    "@oak/oak": "jsr:@oak/oak@^17.2.0",
+    "moment": "npm:moment@^2.30.1",
+    "@std/dotenv": "jsr:@std/dotenv@^0.225.7",
+    "@std/fs": "jsr:@std/fs@^1.0.24",
+    "@std/path": "jsr:@std/path@^1.1.5"
+  },
+  "nodeModulesDir": "none",
+  "tasks": {
+    "cli": {
+      "description": "Show your bank account balances in the terminal.",
+      "command": "deno run --allow-net --allow-read --allow-env src/cli.ts"
+    },
+    "web": {
+      "description": "Start a web server to display your bank account balances in a web browser.",
+      "command": "deno run --allow-net --allow-write=./ --allow-read --allow-env src/web.ts"
+    },
+    "deps": {
+      "description": "Update the project's third-party dependencies.",
+      "command": "deno outdated --update --latest || true"
+    },
+    "lint": {
+      "description": "Run Deno's linting and formatting tools with the configuration defined above",
+      "command": "deno lint && deno fmt"
+    }
+  }
+}
